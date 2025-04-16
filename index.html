@@ -5,32 +5,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora de Recursos</title>
-  <link
-    rel="stylesheet"
+  <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPXpjrQ6h7N4Z3n3u9Qgs4N1pZnpWzZhTxkWHujw2X04"
-    crossorigin="anonymous"
-  />
+    crossorigin="anonymous" />
   <style>
     body {
-      background-color: #f5f7fa;
+      background: linear-gradient(135deg, #eef2f7, #ffffff);
       font-family: "Segoe UI", sans-serif;
     }
 
     .calculator-card {
       background-color: #ffffff;
-      border: none;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+      border-radius: 14px;
+      padding: 2.5rem;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease-in-out;
     }
 
     .calculator-title {
-      font-weight: 600;
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-size: 1.75rem;
       text-align: center;
-      color: #343a40;
+      margin-bottom: 2rem;
+      color: #2c3e50;
     }
 
     .form-label {
@@ -38,20 +36,35 @@
       color: #495057;
     }
 
-    .btn-calculate {
-      font-weight: 600;
-      font-size: 1.1rem;
-      padding: 0.6rem;
+    .form-control {
+      border-radius: 8px;
+      font-size: 0.95rem;
     }
 
-    .result-box {
-      font-size: 1.3rem;
+    .input-group-text {
+      background-color: #f0f4f8;
+      border: 1px solid #ced4da;
+      font-size: 0.85rem;
+    }
+
+    .btn-calculate {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.75rem;
+      border-radius: 8px;
+    }
+
+    .alert {
+      border-radius: 8px;
+      font-size: 1.2rem;
       font-weight: 600;
       text-align: center;
     }
 
-    .input-group-text {
-      font-size: 0.9rem;
+    @media (max-width: 768px) {
+      .calculator-card {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -59,7 +72,7 @@
 <body>
   <div class="container py-5">
     <div class="row justify-content-center">
-      <div class="col-md-10 col-lg-8">
+      <div class="col-12 col-md-10 col-lg-8">
         <div class="calculator-card">
           <div class="calculator-title">🧮 Calculadora de Custo de Recursos</div>
 
@@ -96,12 +109,12 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block btn-calculate mt-3">
+            <button type="submit" class="btn btn-primary btn-block btn-calculate mt-4">
               Calcular Total
             </button>
           </form>
 
-          <div class="alert alert-success mt-4 result-box" role="alert">
+          <div class="alert alert-success mt-4" role="alert">
             Total: R$ <span id="total">0,00</span>
           </div>
         </div>
